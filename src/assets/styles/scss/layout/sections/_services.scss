@@ -1,0 +1,95 @@
+.my-main {
+   background: $lochmara;
+   width: 100%;
+   min-width: 32rem;
+   padding-bottom: 9rem;
+
+   & label {
+      color: $azure;
+   }
+}
+
+#service-offers,
+#rates {
+   @include flexBox(column, center, center, 0rem);
+   margin-top: 9rem;
+   min-width: 35rem;
+   width: 100%;
+
+   & .services-title,
+   & .rates-title,
+   & .quote-title {
+      text-align: center;
+      text-shadow: 1px 2px 3px rgb(0, 0, 0);
+      color: hsl(45deg, 93%, 50%);
+
+      @media (min-width: 768px) {
+         font-size: 3.5rem;
+      }
+
+      @media (min-width: 992px) {
+         font-size: 5rem;
+      }
+   }
+
+   & .service-text {
+      & .para {
+         padding: 2rem;
+
+         @media (min-width: 768px) {
+            padding: 2rem 4rem;
+         }
+      }
+   }
+}
+
+.services-container,
+.rates-container {
+   @include flexBox(column, center, center, 6rem);
+   width: 100%;
+   padding: 4rem 2rem;
+   font-size: 1rem;
+
+   @media (min-width: 768px) {
+      padding: 4rem;
+      font-size: 1.4rem;
+   }
+
+   & .storage-racks-container,
+   & .basic-rate-container {
+      @include flexBox(column, center, center, 1rem);
+      width: 100%;
+
+      & h2 {
+         text-align: left;
+         width: 100%;
+         text-shadow: 1px 2px 3px rgb(0, 0, 0);
+      }
+   }
+}
+
+table.roundedCorners {
+   border-spacing: 0;
+   width: 100%;
+   text-align: center;
+
+   th,
+   td {
+      border-bottom: 0.5px solid hsl(204deg, 68%, 30%);
+      padding: 20px;
+      width: 30%;
+      background-color: rgb(37, 71, 92);
+   }
+   table.roundedCorners tr:last-child > td {
+      border-bottom: none;
+   }
+   th {
+      background: rgb(10, 34, 50);
+   }
+   th:first-child {
+      border-top-left-radius: 20px;
+   }
+   th:last-child {
+      border-top-right-radius: 20px;
+   }
+}

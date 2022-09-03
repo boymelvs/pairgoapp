@@ -1,0 +1,108 @@
+@import "../../components/quotes-forms";
+
+#rfq {
+   @include flexBox(column, center, center, 4rem);
+   width: 100%;
+   color: $black-pearl;
+
+   @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 0rem;
+   }
+
+   & .offer-container {
+      @include flexBox(column, center, center, 0);
+
+      @media (min-width: 768px) {
+         width: 100%;
+         gap: 2rem;
+      }
+
+      & .offers-title {
+         text-align: center;
+         font-size: 2.5rem;
+         font-weight: $font-weight-600;
+
+         @media (min-width: 768px) {
+            font-size: 3.5rem;
+         }
+
+         @media (min-width: 992px) {
+            font-size: 5rem;
+         }
+      }
+
+      & .offer-services {
+         @include flexBox(row, flex-start, center, 10rem);
+
+         @media (min-width: 768px) {
+            gap: 0;
+         }
+
+         @media (min-width: 992px) {
+            gap: 10rem;
+         }
+
+         & .card {
+            @include flexBox(column, center, center, 1rem);
+            width: 10rem;
+
+            @media (min-width: 768px) {
+               width: 20rem;
+            }
+
+            & .card-img {
+               width: 100%;
+
+               @media (min-width: 768px) {
+                  width: 15rem;
+               }
+            }
+
+            & .card-title {
+               text-align: center;
+               font-weight: $font-weight-600;
+            }
+
+            & .card-description {
+               text-align: center;
+               font-size: 1.2rem;
+            }
+         }
+      }
+
+      & .service-rates {
+         position: relative;
+
+         &::before {
+            content: "";
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 100%;
+            border-bottom: 0.3rem solid $black-pearl;
+            transform: scale(0, 1);
+            transform-origin: right;
+            transition: transform 300ms ease-in-out;
+         }
+
+         &:hover::before {
+            transform: scale(1, 1);
+            transform-origin: left;
+         }
+
+         &.active::before {
+            transform: scale(1, 1);
+            transform-origin: left;
+         }
+
+         & a {
+            font-size: 2.5rem;
+            text-decoration: none;
+            color: $black-pearl;
+            font-weight: $font-weight-600;
+         }
+      }
+   }
+}
