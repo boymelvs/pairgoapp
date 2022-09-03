@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import Link from "../Routes/Link";
 import ImgClients from "../../assets/images/clients/ImgClients";
 
 const Clients = ({ getClients }) => {
@@ -40,7 +41,7 @@ const Clients = ({ getClients }) => {
             <div className="client-container">{result}</div>
 
             <div className="see-all">
-               <a href="./pages/client.html"> See All... </a>
+               <Link href="/clients"> See All... </Link>
             </div>
          </section>
       </>

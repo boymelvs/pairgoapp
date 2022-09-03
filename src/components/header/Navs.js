@@ -1,10 +1,35 @@
 import React, { useRef } from "react";
+import Link from "../Routes/Link";
 
-const Navs = ({ id }) => {
+const Navs = ({ sectionId }) => {
    const checkboxRef = useRef();
 
    const onClickMenuItem = () => {
       checkboxRef.current.checked = false;
+   };
+
+   const myHome = () => {
+      if (sectionId === "all-services" || sectionId === "all-clients" || sectionId === "contact-us" || sectionId === "about-us") {
+         return <Link href="/#my-home">Home</Link>;
+      } else {
+         return <a href="#my-home">Home</a>;
+      }
+   };
+
+   const myServices = () => {
+      if (sectionId === "all-clients" || sectionId === "contact-us" || sectionId === "about-us") {
+         return <Link href="/services">Services</Link>;
+      } else {
+         return <a href="#services">Services</a>;
+      }
+   };
+
+   const myClients = () => {
+      if (sectionId === "all-services" || sectionId === "contact-us" || sectionId === "about-us") {
+         return <Link href="/clients">Clients</Link>;
+      } else {
+         return <a href="#clients">Clients</a>;
+      }
    };
 
    return (
@@ -13,35 +38,25 @@ const Navs = ({ id }) => {
 
          <nav className="nav-bar ">
             <ul className="menu">
-               <li className={`menu-item hero ${id === "hero" && "active"}`}>
-                  <a href="#my-home" onClick={onClickMenuItem}>
-                     Home
-                  </a>
+               <li className={`menu-item hero ${sectionId === "hero" && "active"}`} onClick={onClickMenuItem}>
+                  {myHome()}
                </li>
-               <li className={`menu-item services ${id === "rfq" && "active"}`}>
-                  <a href="#rfq" onClick={onClickMenuItem}>
-                     Services
-                  </a>
+               <li className={`menu-item services ${(sectionId === "all-services" || sectionId === "services") && "active"}`} onClick={onClickMenuItem}>
+                  {myServices()}
                </li>
-               <li className={`menu-item clients ${id === "clients" && "active"}`}>
-                  <a href="#clients" onClick={onClickMenuItem}>
-                     Clients
-                  </a>
+               <li className={`menu-item clients ${(sectionId === "all-clients" || sectionId === "clients") && "active"}`} onClick={onClickMenuItem}>
+                  {myClients()}
                </li>
-               <li className={`menu-item teams ${id === "teams" && "active"}`}>
+               <li className={`menu-item teams ${sectionId === "teams" && "active"}`} onClick={onClickMenuItem}>
                   <a href="#teams" onClick={onClickMenuItem}>
                      Our Team
                   </a>
                </li>
-               <li className="menu-item about">
-                  <a href="./pages/about.html" onClick={onClickMenuItem}>
-                     About us
-                  </a>
+               <li className={`menu-item about ${sectionId === "about-us" && "active"}`} onClick={onClickMenuItem}>
+                  <Link href="/about">About us</Link>
                </li>
-               <li className="menu-item contacts">
-                  <a href="./pages/contact.html" onClick={onClickMenuItem}>
-                     Contact us
-                  </a>
+               <li className={`menu-item contacts ${sectionId === "contact-us" && "active"}`} onClick={onClickMenuItem}>
+                  <Link href="/contact">Contact us</Link>
                </li>
             </ul>
          </nav>

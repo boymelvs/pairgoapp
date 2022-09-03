@@ -4,11 +4,17 @@ import Navs from "./Navs";
 import Burger from "./Burger";
 
 const Header = ({ scrollYValue, id }) => {
+   const headerBg = () => {
+      if (scrollYValue > 50 || id === "all-services" || id === "all-clients" || id === "about-us" || id === "contact-us") {
+         return "active";
+      }
+   };
+
    return (
       <>
-         <header id="my-header" className={`test ${scrollYValue > 50 && "active"}`}>
+         <header id="my-header" className={headerBg()}>
             <Logo />
-            <Navs id={id} />
+            <Navs sectionId={id} />
             <Burger />
          </header>
       </>

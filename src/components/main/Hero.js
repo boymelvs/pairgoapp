@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import ImgHeros from "../../assets/images/hero/ImgHero";
+import Link from "../Routes/Link";
 
 const Hero = ({ getHero }) => {
    const [currentSlide, setCurrentSlide] = useState(0);
@@ -60,9 +61,9 @@ const Hero = ({ getHero }) => {
                <div className="call-text">Call: 123456789</div>
 
                <div className="hero-btn-container">
-                  <a href="./pages/contact.html" rel="noopener noreferrer">
+                  <Link href="/contact">
                      <input type="button" id="hero-btn" value="Contact Us" />
-                  </a>
+                  </Link>
                </div>
             </div>
          </section>

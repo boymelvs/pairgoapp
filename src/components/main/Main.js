@@ -27,13 +27,13 @@ const Main = ({ scrollYValue, getId }) => {
    });
 
    return (
-      <main id="my-main">
+      <>
          <Hero getHero={setHeroLocation} />
          <Rfq getRfq={setRfqLocation} />
          <Clients getClients={setClientLocation} />
          <Testimonial getTesti={setTestiLocation} />
          <Teams getTeams={setTeamsLocation} />
-      </main>
+      </>
    );
 };
 

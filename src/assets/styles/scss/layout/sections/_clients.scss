@@ -1,4 +1,5 @@
-#clients {
+#clients,
+#all-clients {
    @include flexBox(column, center, center, 2rem);
    width: 100%;
    text-align: center;

@@ -1,6 +1,6 @@
 @import "../../components/quotes-forms";
 
-#rfq {
+#services {
    @include flexBox(column, center, center, 4rem);
    width: 100%;
    color: $black-pearl;
