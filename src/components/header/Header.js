@@ -3,9 +3,9 @@ import Logo from "./Logo";
 import Navs from "./Navs";
 import Burger from "./Burger";
 
-const Header = ({ scrollYValue, id }) => {
+const Header = ({ scrollYValue, sendId, setGoToTeams }) => {
    const headerBg = () => {
-      if (scrollYValue > 50 || id === "all-services" || id === "all-clients" || id === "about-us" || id === "contact-us") {
+      if (scrollYValue > 50 || sendId === "all-services" || sendId === "all-clients" || sendId === "contact-us") {
          return "active";
       }
    };
@@ -14,7 +14,7 @@ const Header = ({ scrollYValue, id }) => {
       <>
          <header id="my-header" className={headerBg()}>
             <Logo />
-            <Navs sectionId={id} />
+            <Navs sectionId={sendId} setGoToTeams={setGoToTeams} />
             <Burger />
          </header>
       </>

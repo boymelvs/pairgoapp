@@ -12,16 +12,18 @@ const Allservices = ({ scrollYValue, getId }) => {
 
    useEffect(() => {
       sendId(allServicesSection.current);
-   });
+      window.scrollTo(0, 0);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 
    return (
       <div id="all-services" ref={allServicesSection}>
          {/* services section  */}
          <section id="service-offers">
-            <h2 class="services-title">WAREHOUSING</h2>
+            <h2 className="services-title">WAREHOUSING</h2>
 
-            <div class="services-container">
-               <div class="storage-racks-container">
+            <div className="services-container">
+               <div className="storage-racks-container">
                   <h2>Warehouse Capacity</h2>
                   <table className="roundedCorners">
                      <tr>
@@ -36,6 +38,7 @@ const Allservices = ({ scrollYValue, getId }) => {
                            <h3>Other</h3>
                         </th>
                      </tr>
+
                      <tr>
                         <td>
                            <strong>Storage</strong>
@@ -50,6 +53,7 @@ const Allservices = ({ scrollYValue, getId }) => {
                            1,280 m<sup>2</sup>
                         </td>
                      </tr>
+
                      <tr>
                         <td>
                            <strong>Loading</strong>
@@ -64,6 +68,7 @@ const Allservices = ({ scrollYValue, getId }) => {
                            140 m<sup>2</sup>
                         </td>
                      </tr>
+
                      <tr>
                         <td>
                            <strong>Total</strong>
@@ -96,6 +101,7 @@ const Allservices = ({ scrollYValue, getId }) => {
                            <h3>Other</h3>
                         </th>
                      </tr>
+
                      <tr>
                         <td>
                            <strong>2nd Floor</strong>
@@ -110,6 +116,7 @@ const Allservices = ({ scrollYValue, getId }) => {
                            1,280 m<sup>2</sup>
                         </td>
                      </tr>
+
                      <tr>
                         <td>
                            <strong>Loading</strong>
@@ -124,6 +131,7 @@ const Allservices = ({ scrollYValue, getId }) => {
                            140 m<sup>2</sup>
                         </td>
                      </tr>
+
                      <tr>
                         <td>
                            <strong>Total</strong>
@@ -153,6 +161,7 @@ const Allservices = ({ scrollYValue, getId }) => {
                            <h3>32 Units, 4 Levels</h3>
                         </th>
                      </tr>
+
                      <tr>
                         <td>
                            <strong>Length</strong>
@@ -160,6 +169,7 @@ const Allservices = ({ scrollYValue, getId }) => {
                         <td>24 m</td>
                         <td>24 m</td>
                      </tr>
+
                      <tr>
                         <td>
                            <strong>Width</strong>
@@ -167,6 +177,7 @@ const Allservices = ({ scrollYValue, getId }) => {
                         <td>27 m</td>
                         <td>27 m</td>
                      </tr>
+
                      <tr>
                         <td>
                            <strong>Height</strong>
@@ -392,7 +403,7 @@ const Allservices = ({ scrollYValue, getId }) => {
             </div>
          </section>
 
-         <sections id="rates">
+         <section id="rates">
             <h2 className="rates-title">STORAGE FEES</h2>
             <div className="rates-container">
                <div className="basic-rate-container">
@@ -668,7 +679,7 @@ const Allservices = ({ scrollYValue, getId }) => {
                   </table>
                </div>
             </div>
-         </sections>
+         </section>
 
          <div className="quote-container">
             <h2 className="quote-title">REQUEST A QUOTE</h2>

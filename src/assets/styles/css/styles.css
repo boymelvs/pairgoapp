@@ -1476,336 +1476,100 @@ table.roundedCorners th:last-child {
   border-top-right-radius: 20px;
 }
 
-/* About Us */
-#about-main {
-  background-image: linear-gradient(135deg, rgba(19, 94, 156, 0.5469538157) 0%, rgba(2, 15, 29, 0.4125000342) 100%), url("../../images/about/about-hero.png");
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  height: 350px;
-  min-width: 35rem;
+#about-us {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
   justify-content: center;
-  position: relative;
+  gap: 0;
+  width: 100%;
+}
+#about-us .about-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  height: 35rem;
+  background-image: url("../../images/about/about-hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   padding-top: 50px;
 }
-
 @media (min-width: 768px) {
-  #about-main {
-    padding-top: 50px;
+  #about-us .about-hero {
     height: 400px;
   }
 }
 @media (min-width: 992px) {
-  #about-main {
+  #about-us .about-hero {
     min-height: 80vh;
+    gap: 2rem;
   }
 }
-#about-main::before {
+#about-us .about-hero::before {
   content: "";
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
 }
-
-#about-us {
-  z-index: 1;
-}
-
-@media (min-width: 768px) {
-  #about-us {
-    padding: 10rem 2rem;
-  }
-}
-#about-us h2 {
+#about-us .about-hero h2 {
   font-size: 2.5rem;
   text-align: center;
-  color: hsl(180deg, 8%, 97%);
-  text-shadow: 1px 1px 2px rgb(30, 21, 22);
-  z-index: 5;
+  text-shadow: 0.1rem 0.1rem 0.2rem hsl(212deg, 29%, 13%);
+  z-index: 1;
 }
-
 @media (min-width: 768px) {
-  #about-us h2 {
+  #about-us .about-hero h2 {
     font-size: 3.5rem;
   }
 }
 @media (min-width: 992px) {
-  #about-us h2 {
+  #about-us .about-hero h2 {
     font-size: 5rem;
   }
 }
-#about-us .sub-para {
+#about-us .about-hero .sub-para {
+  font-size: 1.4rem;
   padding: 0 2rem;
-  text-shadow: 1px 1px 2px rgb(30, 21, 22);
-  font-size: 17px;
-  color: hsl(0deg, 0%, 100%);
-  z-index: 5;
+  text-align: center;
+  text-shadow: 0.1rem 0.1rem 0.2rem hsl(212deg, 29%, 13%);
+  z-index: 1;
 }
-
 @media (min-width: 768px) {
-  #about-us .sub-para {
+  #about-us .about-hero .sub-para {
     padding: 0 10rem;
   }
 }
 @media (min-width: 992px) {
-  #about-us .sub-para {
+  #about-us .about-hero .sub-para {
     padding: 0 20rem;
   }
 }
 @media (min-width: 1200px) {
-  #about-us .sub-para {
+  #about-us .about-hero .sub-para {
     padding: 0 30rem;
   }
 }
-#about-us .about-para {
-  padding: 1rem;
-  text-align: justify;
-}
-
-@media (min-width: 768px) {
-  #about-us .about-para {
-    padding: 1rem 2rem;
-    font-size: 2.5rem;
-  }
-}
-.about-detail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-container {
-  width: 80%;
-  margin: 50px 0;
-}
-
-.mission {
-  display: flex;
-}
-
-.mission .statement {
-  max-width: 50%;
-  padding: 0 20px;
-}
-
-.statement {
-  display: flex;
-  flex-direction: column;
-  text-align: justify;
-  justify-content: center;
-}
-
-.statement h2,
-p {
-  color: hsl(212deg, 29%, 13%);
-}
-
-.mission img {
-  max-width: 100%;
-}
-
-.capability {
-  display: flex;
-}
-
-.capability .statement {
-  max-width: 50%;
-  padding: 0 20px;
-}
-
-.capability img {
-  max-width: 100%;
-}
-
-.help {
-  background-image: url("../../images/about/help-bg.jpg");
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.help-container {
+#about-us .about-detail {
+  display: none;
   width: 100%;
-  margin: 30px 0;
+}
+#about-us .rate {
+  display: none;
+  width: 100%;
+}
+#about-us .help-container {
+  display: none;
+  width: 100%;
 }
 
-.help-area {
-  display: flex;
-}
-
-.help-area .help-message {
-  max-width: 50%;
-  padding: 0 20px;
-}
-
-.help-message {
-  display: flex;
-  flex-direction: column;
-  text-align: justify;
-  justify-content: center;
-}
-
-.help-message h2 {
-  color: hsl(212deg, 29%, 13%);
-  font-size: 40px;
-}
-
-.help-message p {
-  color: hsl(212deg, 29%, 13%);
-}
-
-.quote-container h2,
-label {
-  color: hsl(212deg, 29%, 13%);
-}
-
-.rate {
-  background-image: url("../../images/about/rate-bg.png");
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.rate-container {
-  max-width: 100%;
-  margin-bottom: 70px;
-}
-
-.rate-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.details {
-  border: 1px solid whitesmoke;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 30px 70px;
-}
-
-.rate-row h2 {
-  font-size: 40px;
-  color: #ce1126;
-  font-weight: bolder;
-}
-
-@media (max-width: 1025px) {
-  .help-container {
-    width: 95%;
-  }
-}
-@media (max-width: 991px) {
-  .details {
-    padding: 30px 60px;
-  }
-  .help-message h2 {
-    font-size: 25px;
-  }
-}
-@media (max-width: 768px) {
-  .mission {
-    flex-direction: column-reverse;
-  }
-  .capability {
-    flex-direction: column;
-    margin-top: 50px;
-  }
-  .mission,
-.statement,
-.capability {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .mission .statement {
-    max-width: 100%;
-  }
-  .capability .statement {
-    max-width: 100%;
-  }
-  .rate-row h2 {
-    font-size: 30px;
-  }
-  .rate-row p {
-    font-size: 13px;
-  }
-  .details {
-    padding: 30px 50px;
-  }
-  .rate-container {
-    margin-bottom: 0px;
-  }
-  .help-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .help-area .help-message {
-    max-width: 100%;
-    padding: 0 10px;
-  }
-  .help-area .quote-container {
-    max-width: 100%;
-    margin-top: 50px;
-  }
-}
-@media (max-width: 600px) {
-  .details {
-    padding: 20px 30px;
-  }
-  .rate-row h2 {
-    font-size: 20px;
-  }
-  #about-us h2 {
-    font-size: 20px;
-  }
-  #about-us .sub-para {
-    font-size: 14px;
-  }
-}
-@media (max-width: 480px) {
-  .details {
-    padding: 15px 15px;
-  }
-  .help-message h2 {
-    font-size: 25px;
-  }
-  .quote-container h2 {
-    font-size: 25px;
-  }
-  .help-area .quote-container {
-    padding: 0 5px;
-  }
-  .about-container {
-    width: 95%;
-  }
-  .mission .statement {
-    padding: 0 10px;
-  }
-  .capability .statement {
-    padding: 0 10px;
-  }
-  .mission img {
-    max-width: 100%;
-  }
-  .capability img {
-    max-width: 100%;
-  }
-}
 *,
 ::before,
 ::after {

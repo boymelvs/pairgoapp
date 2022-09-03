@@ -29,7 +29,8 @@ const Hero = ({ getHero }) => {
       return () => {
          clearTimeout(timer);
       };
-   }, [currentSlide, isActive, getHero]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [currentSlide, isActive]);
 
    const result = ImgHeros.map((imgHero, index) => {
       let styles = { transform: `translateX(${(index - currentSlide) * 100}%)` };

@@ -11,6 +11,7 @@ import Route from "./components/Routes/Route";
 function App() {
    const [scrollYValue, setScrollYValue] = useState(0);
    const [id, setId] = useState("");
+   const [gotoTeams, setGoToTeams] = useState(false);
 
    useEffect(() => {
       const onBodyScroll = () => {
@@ -30,10 +31,11 @@ function App() {
 
    return (
       <div id="my-home" className="container">
-         <Header scrollYValue={scrollYValue} id={id} />
+         <Header scrollYValue={scrollYValue} sendId={id} setGoToTeams={setGoToTeams} />
+
          <main id="my-main">
             <Route path="/">
-               <Main scrollYValue={scrollYValue} getId={getId} />
+               <Main scrollYValue={scrollYValue} getId={getId} gotoTeams={gotoTeams} />
             </Route>
 
             <Route path="/services">
@@ -52,6 +54,7 @@ function App() {
                <Contact scrollYValue={scrollYValue} getId={getId} />
             </Route>
          </main>
+
          <Footer />
       </div>
    );

@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import ImgTeams from "../../assets/images/teams/ImgTeams";
 
-const Teams = ({ getTeams }) => {
+const Teams = ({ getTeams, gotoTeams }) => {
    const teamSection = useRef("");
 
    useEffect(() => {
       getTeams(teamSection.current);
-   }, [getTeams]);
+      gotoTeams && window.scrollTo(0, teamSection.current.offsetTop);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 
    const result = ImgTeams.map((team) => {
       return (

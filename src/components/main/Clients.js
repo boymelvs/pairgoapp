@@ -7,7 +7,9 @@ const Clients = ({ getClients }) => {
 
    useEffect(() => {
       getClients(clientSection.current);
-   }, [getClients]);
+      window.scrollTo(0, 0);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 
    let result = [];
    for (let i = 0; i < 21; i++) {

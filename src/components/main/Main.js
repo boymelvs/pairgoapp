@@ -5,7 +5,7 @@ import Clients from "./Clients";
 import Testimonial from "./Testimonial";
 import Teams from "./Teams";
 
-const Main = ({ scrollYValue, getId }) => {
+const Main = ({ scrollYValue, getId, gotoTeams }) => {
    const [heroLocation, setHeroLocation] = useState(0);
    const [rfqLocation, setRfqLocation] = useState(0);
    const [clientLocation, setClientLocation] = useState(0);
@@ -32,7 +32,7 @@ const Main = ({ scrollYValue, getId }) => {
          <Rfq getRfq={setRfqLocation} />
          <Clients getClients={setClientLocation} />
          <Testimonial getTesti={setTestiLocation} />
-         <Teams getTeams={setTeamsLocation} />
+         <Teams getTeams={setTeamsLocation} gotoTeams={gotoTeams} />
       </>
    );
 };

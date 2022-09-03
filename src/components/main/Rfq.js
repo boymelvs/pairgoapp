@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import Link from "../Routes/Link";
 import Quoteforms from "./Quoteforms";
 import ImgServices from "../../assets/images/services/ImgServices";
 
@@ -7,7 +8,8 @@ const Rfq = ({ getRfq }) => {
 
    useEffect(() => {
       getRfq(servicesSection.current);
-   }, [getRfq]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
 
    const result1 = ImgServices[0].map((service) => {
       return (
@@ -42,7 +44,7 @@ const Rfq = ({ getRfq }) => {
                <div className="offer-services">{result2}</div>
 
                <div className="service-rates">
-                  <a href="./pages/services.html"> Read More... </a>
+                  <Link href="/services"> Read More... </Link>
                </div>
             </div>
 
