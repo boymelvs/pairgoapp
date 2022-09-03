@@ -5,6 +5,7 @@ import Footer from "./components/footer/Footer";
 
 function App() {
    const [scrollYValue, setScrollYValue] = useState(0);
+   const [id, setId] = useState("");
 
    useEffect(() => {
       const onBodyScroll = () => {
@@ -18,12 +19,16 @@ function App() {
       };
    }, []);
 
+   const getId = (value) => {
+      setId(value);
+   };
+
    return (
-      <>
-         <Header scrollYValue={scrollYValue} />
-         <Main />
+      <div id="my-home" className="container">
+         <Header scrollYValue={scrollYValue} id={id} />
+         <Main scrollYValue={scrollYValue} getId={getId} />
          <Footer />
-      </>
+      </div>
    );
 }
 

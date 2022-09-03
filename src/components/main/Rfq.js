@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import ImgServices from "../../assets/images/services/ImgServices";
 
-const Rfq = () => {
+const Rfq = ({ getRfq }) => {
+   const rfqSection = useRef("");
+
+   useEffect(() => {
+      getRfq(rfqSection.current);
+   }, [getRfq]);
+
    const result1 = ImgServices[0].map((service) => {
       return (
          <div className="card packaging" key={service.id}>
@@ -25,7 +31,7 @@ const Rfq = () => {
    return (
       <>
          {/* 2nd section  */}
-         <section id="rfq">
+         <section id="rfq" ref={rfqSection}>
             <div className="offer-container">
                <h2 className="offers-title">SERVICES</h2>
                <h3 className="offers-subtitle">What we offer</h3>

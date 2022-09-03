@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ImgHeros from "../../assets/images/hero/ImgHero";
 
-const Hero = () => {
+const Hero = ({ getHero }) => {
    const [currentSlide, setCurrentSlide] = useState(0);
    const [isActive, setIsActive] = useState(true);
+   const heroSection = useRef("");
 
    useEffect(() => {
       const runSlide = () => {
@@ -18,14 +19,16 @@ const Hero = () => {
          }
       };
 
-      let timer = setInterval(() => {
+      let timer = setTimeout(() => {
          runSlide();
       }, 5000);
 
+      getHero(heroSection.current);
+
       return () => {
-         clearInterval(timer);
+         clearTimeout(timer);
       };
-   }, [currentSlide, isActive]);
+   }, [currentSlide, isActive, getHero]);
 
    const result = ImgHeros.map((imgHero, index) => {
       let styles = { transform: `translateX(${(index - currentSlide) * 100}%)` };
@@ -40,7 +43,7 @@ const Hero = () => {
    return (
       <>
          {/* first section  */}
-         <section id="hero">
+         <section id="hero" ref={heroSection}>
             <h2 className="hero-title">
                <span> A LEADER IN THE </span>
                <span> INDUSTRY </span>

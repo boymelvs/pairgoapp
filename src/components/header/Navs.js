@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-const Navs = () => {
+const Navs = ({ id }) => {
    const checkboxRef = useRef();
 
    const onClickMenuItem = () => {
@@ -13,22 +13,22 @@ const Navs = () => {
 
          <nav className="nav-bar ">
             <ul className="menu">
-               <li className="menu-item hero active">
+               <li className={`menu-item hero ${id === "hero" && "active"}`}>
                   <a href="#my-home" onClick={onClickMenuItem}>
                      Home
                   </a>
                </li>
-               <li className="menu-item services">
+               <li className={`menu-item services ${id === "rfq" && "active"}`}>
                   <a href="#rfq" onClick={onClickMenuItem}>
                      Services
                   </a>
                </li>
-               <li className="menu-item clients">
+               <li className={`menu-item clients ${id === "clients" && "active"}`}>
                   <a href="#clients" onClick={onClickMenuItem}>
                      Clients
                   </a>
                </li>
-               <li className="menu-item teams">
+               <li className={`menu-item teams ${id === "teams" && "active"}`}>
                   <a href="#teams" onClick={onClickMenuItem}>
                      Our Team
                   </a>
