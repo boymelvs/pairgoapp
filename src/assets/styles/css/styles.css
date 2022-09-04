@@ -1374,7 +1374,7 @@
   align-items: center;
   justify-content: center;
   gap: 0rem;
-  min-width: 35rem;
+  min-width: 32rem;
   width: 100%;
 }
 #all-services #service-offers .services-title, #all-services #service-offers .rates-title,
@@ -1447,13 +1447,11 @@
   gap: 6rem;
   width: 100%;
   padding: 4rem 2rem;
-  font-size: 1rem;
 }
 @media (min-width: 768px) {
   #all-services .services-container,
 #all-services .rates-container {
     padding: 4rem;
-    font-size: 1.4rem;
   }
 }
 #all-services .services-container .warehouse-container, #all-services .services-container .office-container, #all-services .services-container .storage-racks-container, #all-services .services-container .cold-storage-container, #all-services .services-container .special-storage-container, #all-services .services-container .vehicle-area-container, #all-services .services-container .basic-rate-container, #all-services .services-container .special-cargo-container, #all-services .services-container .service-charge-container, #all-services .services-container .deconsolidation-fee-container, #all-services .services-container .return-fee-container,
@@ -1555,10 +1553,12 @@
   padding: 1rem;
   border-bottom: 0.1rem solid hsl(204deg, 68%, 30%);
   background-color: hsl(203deg, 43%, 25%);
+  font-size: 1.3rem;
 }
 @media (min-width: 768px) {
   #all-services .border {
     height: 5rem;
+    font-size: 1.8rem;
   }
 }
 #all-services .round-left {
@@ -1622,7 +1622,7 @@
 }
 @media (min-width: 992px) {
   #about-us .about-hero {
-    min-height: 80vh;
+    min-height: 90vh;
     gap: 2rem;
   }
 }
@@ -1633,7 +1633,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.35);
   z-index: 0;
 }
 #about-us .about-hero h2 {

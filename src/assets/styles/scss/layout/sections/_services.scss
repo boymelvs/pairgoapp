@@ -6,7 +6,7 @@
    #service-offers,
    #rates {
       @include flexBox(column, center, center, 0rem);
-      min-width: 35rem;
+      min-width: 32rem;
       width: 100%;
 
       & .services-title,
@@ -62,11 +62,9 @@
       @include flexBox(column, center, center, 6rem);
       width: 100%;
       padding: 4rem 2rem;
-      font-size: 1rem;
 
       @media (min-width: 768px) {
          padding: 4rem;
-         font-size: 1.4rem;
       }
 
       & .warehouse-container,
@@ -147,9 +145,11 @@
       padding: 1rem;
       border-bottom: 0.1rem solid $lochmara;
       background-color: hsl(203, 43%, 25%);
+      font-size: 1.3rem;
 
       @media (min-width: 768px) {
          height: 5rem;
+         font-size: 1.8rem;
       }
    }
 

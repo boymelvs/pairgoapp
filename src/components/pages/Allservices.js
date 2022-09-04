@@ -313,7 +313,7 @@ const Allservices = ({ scrollYValue, getId }) => {
             </div>
          </section>
 
-         <sections id="rates">
+         <section id="rates">
             <h2 className="rates-title">STORAGE FEES</h2>
 
             <div className="rates-container">
@@ -485,7 +485,7 @@ const Allservices = ({ scrollYValue, getId }) => {
                   </div>
                </div>
             </div>
-         </sections>
+         </section>
 
          <div className="quote-container">
             <h2 className="quote-title">REQUEST A QUOTE</h2>
