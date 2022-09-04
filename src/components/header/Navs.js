@@ -63,9 +63,6 @@ const Navs = ({ sectionId, setGoToTeams }) => {
                   {myClients()}
                </li>
                <li className={`menu-item teams ${sectionId === "teams" && "active"}`} onClick={() => onClickMenuItem("teams")}>
-                  {/* <a href="#teams" onClick={onClickMenuItem}>
-                     Our Team
-                  </a> */}
                   {myTeams()}
                </li>
                <li className={`menu-item about ${sectionId === "about-us" && "active"}`} onClick={onClickMenuItem}>

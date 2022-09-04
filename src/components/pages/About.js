@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import ImgAbouts from "../../assets/images/about/ImgAbout";
 import AboutRates from "../../assets/images/about/AboutRate";
-import Quoteforms from "../main/Quoteforms";
+import Quoteforms from "../forms/Quoteforms";
 
 const About = ({ scrollYValue, getId }) => {
    const aboutSection = useRef("");

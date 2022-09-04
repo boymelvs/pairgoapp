@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import Contactform from "./Contactform";
+import Contactform from "../forms/Contactform";
 
 const Contact = ({ scrollYValue, getId }) => {
    const contactSection = useRef("");

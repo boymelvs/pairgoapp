@@ -54,12 +54,20 @@
             outline: none;
             position: relative;
 
+            &:focus {
+               border: 0.1rem solid $lochmara;
+            }
+
             &.active {
                background-image: url("../../images/error/icon-error.svg");
                background-repeat: no-repeat;
                background-size: 1.5rem;
                background-position: center right 2.5rem;
                border: 0.1rem solid $light-red;
+            }
+
+            &:focus.green-border {
+               border: 0.1rem solid $green;
             }
          }
 

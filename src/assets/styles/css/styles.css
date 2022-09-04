@@ -486,12 +486,18 @@
   outline: none;
   position: relative;
 }
+.quote-container #quotes .field .form-field:focus {
+  border: 0.1rem solid hsl(204deg, 68%, 30%);
+}
 .quote-container #quotes .field .form-field.active {
   background-image: url("../../images/error/icon-error.svg");
   background-repeat: no-repeat;
   background-size: 1.5rem;
   background-position: center right 2.5rem;
   border: 0.1rem solid hsl(0deg, 100%, 63%);
+}
+.quote-container #quotes .field .form-field:focus.green-border {
+  border: 0.1rem solid hsl(154deg, 59%, 51%);
 }
 .quote-container #quotes .field .warning {
   visibility: hidden;
@@ -1232,12 +1238,18 @@
   outline: none;
   position: relative;
 }
+.quote-container #quotes .field .form-field:focus {
+  border: 0.1rem solid hsl(204deg, 68%, 30%);
+}
 .quote-container #quotes .field .form-field.active {
   background-image: url("../../images/error/icon-error.svg");
   background-repeat: no-repeat;
   background-size: 1.5rem;
   background-position: center right 2.5rem;
   border: 0.1rem solid hsl(0deg, 100%, 63%);
+}
+.quote-container #quotes .field .form-field:focus.green-border {
+  border: 0.1rem solid hsl(154deg, 59%, 51%);
 }
 .quote-container #quotes .field .warning {
   visibility: hidden;
@@ -1337,9 +1349,12 @@
   padding: 1rem;
   outline: none;
   border-radius: 0.5rem;
-  border: 0.1rem solid transparent;
   background: hsl(0deg, 0%, 93%);
+  border: 0.1rem solid transparent;
   position: relative;
+}
+#contact-us #contact-form .field .form-field:focus {
+  border: 0.1rem solid hsl(212deg, 29%, 13%);
 }
 #contact-us #contact-form .field .form-field.active {
   background-image: url("../../images/error/icon-error.svg");
@@ -1347,6 +1362,9 @@
   background-size: 1.5rem;
   background-position: center right 2.5rem;
   border: 0.1rem solid hsl(0deg, 100%, 63%);
+}
+#contact-us #contact-form .field .form-field:focus.green-border {
+  border: 0.1rem solid hsl(154deg, 59%, 51%);
 }
 #contact-us #contact-form .field .warning {
   visibility: hidden;
@@ -1558,7 +1576,7 @@
 @media (min-width: 768px) {
   #all-services .border {
     height: 5rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 #all-services .round-left {
@@ -1588,6 +1606,7 @@
 }
 #all-services .quote-container form {
   background: hsl(204deg, 68%, 30%);
+  border: 0.1rem solid hsl(180deg, 8%, 97%);
 }
 @media (min-width: 768px) {
   #all-services .quote-container form {

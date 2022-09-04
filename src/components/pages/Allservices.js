@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import Quoteforms from "../main/Quoteforms";
+import Quoteforms from "../forms/Quoteforms";
 
 const Allservices = ({ scrollYValue, getId }) => {
    const allServicesSection = useRef("");

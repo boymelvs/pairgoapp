@@ -149,7 +149,7 @@
 
       @media (min-width: 768px) {
          height: 5rem;
-         font-size: 1.8rem;
+         font-size: 1.6rem;
       }
    }
 
@@ -189,6 +189,7 @@
    & .quote-container {
       & form {
          background: $lochmara;
+         border: 0.1rem solid $azure;
 
          @media (min-width: 768px) {
             width: 50%;

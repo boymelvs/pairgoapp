@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Link from "../Routes/Link";
-import Quoteforms from "./Quoteforms";
+import Quoteforms from "../forms/Quoteforms";
 import ImgServices from "../../assets/images/services/ImgServices";
 
 const Rfq = ({ getRfq }) => {
