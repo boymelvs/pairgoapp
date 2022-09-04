@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from "react";
+import ImgAbouts from "../../assets/images/about/ImgAbout";
+import AboutRates from "../../assets/images/about/AboutRate";
 import Quoteforms from "../main/Quoteforms";
 
 const About = ({ scrollYValue, getId }) => {
@@ -16,6 +18,33 @@ const About = ({ scrollYValue, getId }) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
 
+   const missionResult = ImgAbouts.map((ImgAbout) => {
+      const capability = ImgAbout.title === "Capability" ? "capability" : "mission";
+
+      return (
+         <div className={capability} key={ImgAbout.id}>
+            <div className="statement">
+               <h2>{ImgAbout.title}</h2>
+
+               <p>{ImgAbout.statement}</p>
+            </div>
+
+            <div className="image-container">
+               <img src={ImgAbout.image} alt={ImgAbout.alt} />
+            </div>
+         </div>
+      );
+   });
+
+   const rateResult = AboutRates.map((AboutRate) => {
+      return (
+         <div className="details" key={AboutRate.id}>
+            <h2>{AboutRate.stat}</h2>
+            <p>{AboutRate.detail}</p>
+         </div>
+      );
+   });
+
    return (
       <div id="about-us" ref={aboutSection}>
          <section className="about-hero">
@@ -30,113 +59,30 @@ const About = ({ scrollYValue, getId }) => {
             </div>
          </section>
 
-         <section className="about-detail">
-            <div className="mission">
-               <div className="statement">
-                  <h2>Mission and Vision</h2>
-
-                  <p>
-                     To be the preferred and most trusted provider of warehouse and storage company, defined by our quality specialized services that are above standards and beyond
-                     expectations.
-                  </p>
-               </div>
-
-               <div className="img1">
-                  <img src="https://www.cuinsight.com/wp-content/uploads/2019/11/bigstock-Diverse-team-joining-their-han-289016893.jpg" alt="" />
-               </div>
-            </div>
-
-            <div className="capability">
-               <div className="img2">
-                  <img
-                     src="https://www.atsinc.com/hs-fs/hubfs/Images/Page%20Images/Warehousing%20and%20Yard%20Services/Warehousing-Secondary.jpg?width=1500&name=Warehousing-Secondary.jpg"
-                     alt=""
-                  />
-               </div>
-
-               <div className="statement">
-                  <h2>Capability Statement</h2>
-
-                  <p>
-                     Beyond its decades of service and experience, Pairgo has exemplified its commitment to its values by continuously being one of the most efficient collection
-                     ports of the Bureau of Customs. It has also continued to exceed its collection targets annually, with the highest number of collection per volume of goods
-                     arriving at the port.
-                  </p>
-               </div>
-            </div>
-         </section>
+         <section className="about-detail">{missionResult}</section>
 
          <section className="rate">
-            <div className="rate-container">
-               <div className="rate-row">
-                  <div className="details">
-                     <h2>99%</h2>
-                     <p>on-time delivery rate</p>
-                  </div>
-
-                  <div className="details">
-                     <h2>150+</h2>
-                     <p>professional drivers</p>
-                  </div>
-
-                  <div className="details">
-                     <h2>30+</h2>
-                     <p>years of experience</p>
-                  </div>
-
-                  <div className="details">
-                     <h2>100+</h2>
-                     <p>maintenance facilities</p>
-                  </div>
-
-                  <div className="details">
-                     <h2>Industry</h2>
-                     <p>leader in safety and security</p>
-                  </div>
-
-                  <div className="details">
-                     <h2>Relied</h2>
-                     <p>upon by more than 30+ companies</p>
-                  </div>
-
-                  <div className="details">
-                     <h2>200+</h2>
-                     <p>trained technicians</p>
-                  </div>
-
-                  <div className="details">
-                     <h2>60+</h2>
-                     <p>vehicles managed</p>
-                  </div>
-
-                  <div className="details">
-                     <h2>10M+</h2>
-                     <p>sq. ft of warehouse space</p>
-                  </div>
-               </div>
-            </div>
+            <div className="rate-container">{rateResult}</div>
          </section>
 
          <section className="help-container">
-            <div className="help-area">
-               <div className="help-message">
-                  <h2>HOW CAN WE HELP?</h2>
+            <div className="help-message">
+               <h2>HOW CAN WE HELP?</h2>
 
-                  <p>
-                     Our warehouse and distribution capabilities include supply chain engineering & optimization, integrated technology & data analytics, and value-added services
-                     that provide an efficient operation with continuous improvement.
-                  </p>
+               <p>
+                  Our warehouse and distribution capabilities include supply chain engineering & optimization, integrated technology & data analytics, and value-added services that
+                  provide an efficient operation with continuous improvement.
+               </p>
+               <br />
+               <p>
+                  By implementing automation, technology systems, and LEAN continuous improvement practices, we drive efficiency and productivity by leveraging actionable business
+                  intelligence and taking waste out of your operation.
+               </p>
+            </div>
 
-                  <p>
-                     By implementing automation, technology systems, and LEAN continuous improvement practices, we drive efficiency and productivity by leveraging actionable
-                     business intelligence and taking waste out of your operation.
-                  </p>
-               </div>
-
-               <div className="quote-container">
-                  <h2 className="quote-title">REQUEST A QUOTE</h2>
-                  <Quoteforms />
-               </div>
+            <div className="quote-container">
+               <h2 className="quote-title">REQUEST A QUOTE</h2>
+               <Quoteforms />
             </div>
          </section>
       </div>

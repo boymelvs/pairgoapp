@@ -1,6 +1,7 @@
 #about-us {
    @include flexBox(column, center, center, 0);
    width: 100%;
+   max-width: 144rem;
 
    & .about-hero {
       @include flexBox(column, center, center, 1rem);
@@ -11,10 +12,8 @@
       background-size: cover;
       background-position: center;
       padding-top: 50px;
-
-      @media (min-width: 768px) {
-         height: 400px;
-      }
+      position: relative;
+      z-index: 1;
 
       @media (min-width: 992px) {
          min-height: 80vh;
@@ -28,7 +27,7 @@
          position: absolute;
          top: 0;
          left: 0;
-         background: rgba(0, 0, 0, 0.4);
+         background: rgba(0, 0, 0, 0.3);
          z-index: 0;
       }
 
@@ -36,7 +35,7 @@
          font-size: 2.5rem;
          text-align: center;
          text-shadow: 0.1rem 0.1rem 0.2rem $black-pearl;
-         z-index: 1;
+         z-index: 2;
 
          @media (min-width: 768px) {
             font-size: 3.5rem;
@@ -52,9 +51,10 @@
          padding: 0 2rem;
          text-align: center;
          text-shadow: 0.1rem 0.1rem 0.2rem $black-pearl;
-         z-index: 1;
+         z-index: 2;
 
          @media (min-width: 768px) {
+            font-size: 1.6rem;
             padding: 0 10rem;
          }
 
@@ -69,17 +69,175 @@
    }
 
    & .about-detail {
-      display: none;
+      @include flexBox(column, center, center, 5rem);
       width: 100%;
+      padding: 4rem 1rem;
+      background: $whisper;
+      z-index: 2;
+
+      @media (min-width: 768px) {
+         padding: 4rem;
+      }
+
+      @media (min-width: 992px) {
+         gap: 0;
+      }
+
+      & .capability {
+         @include flexBox(column-reverse, center, center, 0rem);
+         width: 100%;
+
+         @media (min-width: 992px) {
+            margin-top: -0.5rem;
+            flex-direction: row-reverse;
+            gap: 0;
+         }
+      }
+
+      & .mission {
+         @include flexBox(column-reverse, center, center, 0rem);
+         width: 100%;
+
+         @media (min-width: 992px) {
+            flex-direction: row;
+            gap: 0;
+         }
+      }
+
+      & .statement {
+         width: 100%;
+         color: $black-pearl;
+
+         & h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+
+            @media (min-width: 992px) {
+               padding: 0 2rem 0 4rem;
+               text-align: left;
+               position: relative;
+               overflow: hidden;
+
+               &::before {
+                  content: "";
+                  width: 90%;
+                  height: 100%;
+                  position: absolute;
+                  bottom: 0;
+                  left: 4rem;
+                  border-bottom: 0.1rem solid $black-pearl;
+               }
+            }
+         }
+
+         & p {
+            text-align: justify;
+
+            @media (min-width: 992px) {
+               padding: 0 2rem 0 4rem;
+            }
+         }
+      }
+
+      & .image-container {
+         width: 100%;
+         border-radius: 1rem;
+         overflow: hidden;
+
+         @media (min-width: 992px) {
+            border-radius: unset;
+         }
+
+         & img {
+            width: 100%;
+         }
+      }
    }
 
    & .rate {
-      display: none;
       width: 100%;
+      padding: 4rem 1rem;
+
+      @media (min-width: 768px) {
+         padding: 4rem;
+      }
+
+      & .rate-container {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         grid-template-rows: auto;
+
+         background-image: url("../../images/about/rate-bg.png");
+         background-repeat: no-repeat;
+         background-position: center;
+         background-size: cover;
+
+         & .details {
+            width: 100%;
+            text-align: center;
+            border: 0.1rem solid $azure;
+            padding: 2rem 0;
+
+            @media (min-width: 768px) {
+               padding: 4rem;
+            }
+
+            & h2 {
+               color: $fire-engine-red;
+
+               @media (min-width: 768px) {
+                  font-size: 4rem;
+               }
+            }
+
+            & p {
+               font-size: 1.4rem;
+               color: $black-pearl;
+
+               @media (min-width: 768px) {
+                  font-size: 1.6rem;
+               }
+            }
+         }
+      }
    }
 
    & .help-container {
-      display: none;
+      @include flexBox(column, center, center, 5rem);
       width: 100%;
+      padding: 4rem 1rem;
+      color: $black-pearl;
+
+      background-image: url("../../images/about/help-bg.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @media (min-width: 768px) {
+         padding: 4rem;
+      }
+
+      @media (min-width: 992px) {
+         flex-direction: row;
+         gap: 0;
+         width: 100%;
+      }
+
+      & .help-message {
+         width: 100%;
+
+         & h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+         }
+
+         & p {
+            text-align: justify;
+         }
+      }
+
+      & .quote-container {
+         width: 100%;
+      }
    }
 }

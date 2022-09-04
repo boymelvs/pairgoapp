@@ -3,9 +3,9 @@
 /* 10px */
 /* colors */
 /* warning */
+/* about para text */
 /* warning */
 /* navigation footer bg */
-/* font */
 /* font */
 /* font */
 /* bg */
@@ -559,7 +559,7 @@
 }
 @media (min-width: 768px) {
   #services .offer-container .offer-services {
-    gap: 0;
+    gap: 2rem;
   }
 }
 @media (min-width: 992px) {
@@ -572,12 +572,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0;
   width: 10rem;
 }
 @media (min-width: 768px) {
   #services .offer-container .offer-services .card {
-    width: 20rem;
+    width: 15rem;
   }
 }
 #services .offer-container .offer-services .card .card-img {
@@ -585,7 +585,7 @@
 }
 @media (min-width: 768px) {
   #services .offer-container .offer-services .card .card-img {
-    width: 15rem;
+    width: 10rem;
   }
 }
 #services .offer-container .offer-services .card .card-title {
@@ -1033,6 +1033,7 @@
   max-width: 144rem;
   background: hsl(45deg, 93%, 50%);
   padding: 2rem;
+  z-index: 90;
 }
 @media (min-width: 992px) {
   #my-footer {
@@ -1483,6 +1484,7 @@ table.roundedCorners th:last-child {
   justify-content: center;
   gap: 0;
   width: 100%;
+  max-width: 144rem;
 }
 #about-us .about-hero {
   display: flex;
@@ -1497,11 +1499,8 @@ table.roundedCorners th:last-child {
   background-size: cover;
   background-position: center;
   padding-top: 50px;
-}
-@media (min-width: 768px) {
-  #about-us .about-hero {
-    height: 400px;
-  }
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 992px) {
   #about-us .about-hero {
@@ -1516,14 +1515,14 @@ table.roundedCorners th:last-child {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
   z-index: 0;
 }
 #about-us .about-hero h2 {
   font-size: 2.5rem;
   text-align: center;
   text-shadow: 0.1rem 0.1rem 0.2rem hsl(212deg, 29%, 13%);
-  z-index: 1;
+  z-index: 2;
 }
 @media (min-width: 768px) {
   #about-us .about-hero h2 {
@@ -1540,10 +1539,11 @@ table.roundedCorners th:last-child {
   padding: 0 2rem;
   text-align: center;
   text-shadow: 0.1rem 0.1rem 0.2rem hsl(212deg, 29%, 13%);
-  z-index: 1;
+  z-index: 2;
 }
 @media (min-width: 768px) {
   #about-us .about-hero .sub-para {
+    font-size: 1.6rem;
     padding: 0 10rem;
   }
 }
@@ -1558,15 +1558,184 @@ table.roundedCorners th:last-child {
   }
 }
 #about-us .about-detail {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  width: 100%;
+  padding: 4rem 1rem;
+  background: hsl(0deg, 0%, 90%);
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  #about-us .about-detail {
+    padding: 4rem;
+  }
+}
+@media (min-width: 992px) {
+  #about-us .about-detail {
+    gap: 0;
+  }
+}
+#about-us .about-detail .capability {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 0rem;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  #about-us .about-detail .capability {
+    margin-top: -0.5rem;
+    flex-direction: row-reverse;
+    gap: 0;
+  }
+}
+#about-us .about-detail .mission {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 0rem;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  #about-us .about-detail .mission {
+    flex-direction: row;
+    gap: 0;
+  }
+}
+#about-us .about-detail .statement {
+  width: 100%;
+  color: hsl(212deg, 29%, 13%);
+}
+#about-us .about-detail .statement h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+@media (min-width: 992px) {
+  #about-us .about-detail .statement h2 {
+    padding: 0 2rem 0 4rem;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+  #about-us .about-detail .statement h2::before {
+    content: "";
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 4rem;
+    border-bottom: 0.1rem solid hsl(212deg, 29%, 13%);
+  }
+}
+#about-us .about-detail .statement p {
+  text-align: justify;
+}
+@media (min-width: 992px) {
+  #about-us .about-detail .statement p {
+    padding: 0 2rem 0 4rem;
+  }
+}
+#about-us .about-detail .image-container {
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+@media (min-width: 992px) {
+  #about-us .about-detail .image-container {
+    border-radius: unset;
+  }
+}
+#about-us .about-detail .image-container img {
   width: 100%;
 }
 #about-us .rate {
-  display: none;
   width: 100%;
+  padding: 4rem 1rem;
+}
+@media (min-width: 768px) {
+  #about-us .rate {
+    padding: 4rem;
+  }
+}
+#about-us .rate .rate-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  background-image: url("../../images/about/rate-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#about-us .rate .rate-container .details {
+  width: 100%;
+  text-align: center;
+  border: 0.1rem solid hsl(180deg, 8%, 97%);
+  padding: 2rem 0;
+}
+@media (min-width: 768px) {
+  #about-us .rate .rate-container .details {
+    padding: 4rem;
+  }
+}
+#about-us .rate .rate-container .details h2 {
+  color: hsl(353deg, 85%, 44%);
+}
+@media (min-width: 768px) {
+  #about-us .rate .rate-container .details h2 {
+    font-size: 4rem;
+  }
+}
+#about-us .rate .rate-container .details p {
+  font-size: 1.4rem;
+  color: hsl(212deg, 29%, 13%);
+}
+@media (min-width: 768px) {
+  #about-us .rate .rate-container .details p {
+    font-size: 1.6rem;
+  }
 }
 #about-us .help-container {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  width: 100%;
+  padding: 4rem 1rem;
+  color: hsl(212deg, 29%, 13%);
+  background-image: url("../../images/about/help-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  #about-us .help-container {
+    padding: 4rem;
+  }
+}
+@media (min-width: 992px) {
+  #about-us .help-container {
+    flex-direction: row;
+    gap: 0;
+    width: 100%;
+  }
+}
+#about-us .help-container .help-message {
+  width: 100%;
+}
+#about-us .help-container .help-message h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#about-us .help-container .help-message p {
+  text-align: justify;
+}
+#about-us .help-container .quote-container {
   width: 100%;
 }
 

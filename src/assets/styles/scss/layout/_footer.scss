@@ -4,6 +4,7 @@
    max-width: 144rem;
    background: $moon-yellow;
    padding: 2rem;
+   z-index: 90;
 
    @media (min-width: 992px) {
       padding: 2rem 6rem;
