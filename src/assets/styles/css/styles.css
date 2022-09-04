@@ -458,6 +458,7 @@
   padding: 2rem;
   border-radius: 0.5rem;
   border: 0.1rem solid hsl(212deg, 29%, 13%);
+  background: hsl(0deg, 0%, 90%);
 }
 @media (min-width: 768px) {
   .quote-container #quotes {
@@ -1203,6 +1204,7 @@
   padding: 2rem;
   border-radius: 0.5rem;
   border: 0.1rem solid hsl(212deg, 29%, 13%);
+  background: hsl(0deg, 0%, 90%);
 }
 @media (min-width: 768px) {
   .quote-container #quotes {
@@ -1360,64 +1362,84 @@
   background: hsl(45deg, 93%, 50%);
 }
 
-.my-main {
+#all-services {
   background: hsl(204deg, 68%, 30%);
   width: 100%;
-  min-width: 32rem;
-  padding-bottom: 9rem;
+  padding: 9rem 0;
 }
-.my-main label {
-  color: hsl(180deg, 8%, 97%);
-}
-
-#service-offers,
-#rates {
+#all-services #service-offers,
+#all-services #rates {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0rem;
-  margin-top: 9rem;
   min-width: 35rem;
   width: 100%;
 }
-#service-offers .services-title, #service-offers .rates-title, #service-offers .quote-title,
-#rates .services-title,
-#rates .rates-title,
-#rates .quote-title {
+#all-services #service-offers .services-title, #all-services #service-offers .rates-title,
+#all-services #rates .services-title,
+#all-services #rates .rates-title {
   text-align: center;
-  text-shadow: 1px 2px 3px rgb(0, 0, 0);
+  text-shadow: 0.1rem 0.2rem 0.3rem hsl(212deg, 29%, 13%);
   color: hsl(45deg, 93%, 50%);
 }
 @media (min-width: 768px) {
-  #service-offers .services-title, #service-offers .rates-title, #service-offers .quote-title,
-#rates .services-title,
-#rates .rates-title,
-#rates .quote-title {
+  #all-services #service-offers .services-title, #all-services #service-offers .rates-title,
+#all-services #rates .services-title,
+#all-services #rates .rates-title {
     font-size: 3.5rem;
   }
 }
 @media (min-width: 992px) {
-  #service-offers .services-title, #service-offers .rates-title, #service-offers .quote-title,
-#rates .services-title,
-#rates .rates-title,
-#rates .quote-title {
+  #all-services #service-offers .services-title, #all-services #service-offers .rates-title,
+#all-services #rates .services-title,
+#all-services #rates .rates-title {
     font-size: 5rem;
   }
 }
-#service-offers .service-text .para,
-#rates .service-text .para {
+#all-services #service-offers .service-text .para,
+#all-services #rates .service-text .para {
   padding: 2rem;
 }
 @media (min-width: 768px) {
-  #service-offers .service-text .para,
-#rates .service-text .para {
+  #all-services #service-offers .service-text .para,
+#all-services #rates .service-text .para {
     padding: 2rem 4rem;
   }
 }
-
-.services-container,
-.rates-container {
+#all-services #service-offers .miscellaneous,
+#all-services #rates .miscellaneous {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  width: 100%;
+}
+#all-services #service-offers .miscellaneous div,
+#all-services #rates .miscellaneous div {
+  padding: 0 2rem;
+}
+@media (min-width: 768px) {
+  #all-services #service-offers .miscellaneous div,
+#all-services #rates .miscellaneous div {
+    padding: 0rem 4rem;
+  }
+}
+#all-services #service-offers .miscellaneous ol,
+#all-services #rates .miscellaneous ol {
+  padding: 2rem;
+}
+@media (min-width: 768px) {
+  #all-services #service-offers .miscellaneous ol,
+#all-services #rates .miscellaneous ol {
+    padding: 2rem 4rem;
+  }
+}
+#all-services .services-container,
+#all-services .rates-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1428,53 +1450,149 @@
   font-size: 1rem;
 }
 @media (min-width: 768px) {
-  .services-container,
-.rates-container {
+  #all-services .services-container,
+#all-services .rates-container {
     padding: 4rem;
     font-size: 1.4rem;
   }
 }
-.services-container .storage-racks-container, .services-container .basic-rate-container,
-.rates-container .storage-racks-container,
-.rates-container .basic-rate-container {
+#all-services .services-container .warehouse-container, #all-services .services-container .office-container, #all-services .services-container .storage-racks-container, #all-services .services-container .cold-storage-container, #all-services .services-container .special-storage-container, #all-services .services-container .vehicle-area-container, #all-services .services-container .basic-rate-container, #all-services .services-container .special-cargo-container, #all-services .services-container .service-charge-container, #all-services .services-container .deconsolidation-fee-container, #all-services .services-container .return-fee-container,
+#all-services .rates-container .warehouse-container,
+#all-services .rates-container .office-container,
+#all-services .rates-container .storage-racks-container,
+#all-services .rates-container .cold-storage-container,
+#all-services .rates-container .special-storage-container,
+#all-services .rates-container .vehicle-area-container,
+#all-services .rates-container .basic-rate-container,
+#all-services .rates-container .special-cargo-container,
+#all-services .rates-container .service-charge-container,
+#all-services .rates-container .deconsolidation-fee-container,
+#all-services .rates-container .return-fee-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  align-items: center;
+  justify-content: center;
   width: 100%;
 }
-.services-container .storage-racks-container h2, .services-container .basic-rate-container h2,
-.rates-container .storage-racks-container h2,
-.rates-container .basic-rate-container h2 {
+#all-services .services-container .warehouse-container h2, #all-services .services-container .office-container h2, #all-services .services-container .storage-racks-container h2, #all-services .services-container .cold-storage-container h2, #all-services .services-container .special-storage-container h2, #all-services .services-container .vehicle-area-container h2, #all-services .services-container .basic-rate-container h2, #all-services .services-container .special-cargo-container h2, #all-services .services-container .service-charge-container h2, #all-services .services-container .deconsolidation-fee-container h2, #all-services .services-container .return-fee-container h2,
+#all-services .rates-container .warehouse-container h2,
+#all-services .rates-container .office-container h2,
+#all-services .rates-container .storage-racks-container h2,
+#all-services .rates-container .cold-storage-container h2,
+#all-services .rates-container .special-storage-container h2,
+#all-services .rates-container .vehicle-area-container h2,
+#all-services .rates-container .basic-rate-container h2,
+#all-services .rates-container .special-cargo-container h2,
+#all-services .rates-container .service-charge-container h2,
+#all-services .rates-container .deconsolidation-fee-container h2,
+#all-services .rates-container .return-fee-container h2 {
   text-align: left;
   width: 100%;
-  text-shadow: 1px 2px 3px rgb(0, 0, 0);
+  text-shadow: 0.1rem 0.2rem 0.3rem hsl(212deg, 29%, 13%);
 }
-
-table.roundedCorners {
-  border-spacing: 0;
-  width: 100%;
+#all-services .services-container .warehouse, #all-services .services-container .office,
+#all-services .rates-container .warehouse,
+#all-services .rates-container .office {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: auto;
   text-align: center;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
-table.roundedCorners th,
-table.roundedCorners td {
-  border-bottom: 0.5px solid hsl(204deg, 68%, 30%);
-  padding: 20px;
-  width: 30%;
-  background-color: rgb(37, 71, 92);
+#all-services .services-container .warehouse h3, #all-services .services-container .office h3,
+#all-services .rates-container .warehouse h3,
+#all-services .rates-container .office h3 {
+  background: hsl(204deg, 67%, 12%);
 }
-table.roundedCorners table.roundedCorners tr:last-child > td {
-  border-bottom: none;
+#all-services .services-container .storage-racks, #all-services .services-container .cold-storage, #all-services .services-container .vehicle-area, #all-services .services-container .basic-rate, #all-services .services-container .special-cargo, #all-services .services-container .service-charge, #all-services .services-container .deconsolidation-fee, #all-services .services-container .return-fee,
+#all-services .rates-container .storage-racks,
+#all-services .rates-container .cold-storage,
+#all-services .rates-container .vehicle-area,
+#all-services .rates-container .basic-rate,
+#all-services .rates-container .special-cargo,
+#all-services .rates-container .service-charge,
+#all-services .rates-container .deconsolidation-fee,
+#all-services .rates-container .return-fee {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  text-align: center;
+  width: 100%;
 }
-table.roundedCorners th {
+#all-services .services-container .storage-racks h3, #all-services .services-container .cold-storage h3, #all-services .services-container .vehicle-area h3, #all-services .services-container .basic-rate h3, #all-services .services-container .special-cargo h3, #all-services .services-container .service-charge h3, #all-services .services-container .deconsolidation-fee h3, #all-services .services-container .return-fee h3,
+#all-services .rates-container .storage-racks h3,
+#all-services .rates-container .cold-storage h3,
+#all-services .rates-container .vehicle-area h3,
+#all-services .rates-container .basic-rate h3,
+#all-services .rates-container .special-cargo h3,
+#all-services .rates-container .service-charge h3,
+#all-services .rates-container .deconsolidation-fee h3,
+#all-services .rates-container .return-fee h3 {
+  background: hsl(204deg, 67%, 12%);
+}
+#all-services .services-container .special-storage-fee,
+#all-services .rates-container .special-storage-fee {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  text-align: center;
+  width: 100%;
+}
+#all-services .services-container .special-storage-fee h3,
+#all-services .rates-container .special-storage-fee h3 {
+  background: hsl(204deg, 67%, 12%);
+}
+#all-services .border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6rem;
+  padding: 1rem;
+  border-bottom: 0.1rem solid hsl(204deg, 68%, 30%);
+  background-color: hsl(203deg, 43%, 25%);
+}
+@media (min-width: 768px) {
+  #all-services .border {
+    height: 5rem;
+  }
+}
+#all-services .round-left {
+  border-radius: 1rem 0 0 0;
   background: rgb(10, 34, 50);
 }
-table.roundedCorners th:first-child {
-  border-top-left-radius: 20px;
+#all-services .round-right {
+  border-radius: 0 1rem 0 0;
 }
-table.roundedCorners th:last-child {
-  border-top-right-radius: 20px;
+#all-services .cols-1 {
+  grid-column: 1/span 2;
+}
+#all-services .cols-2 {
+  grid-column: 3/span 2;
+}
+#all-services .cols-3 {
+  grid-column: 5/span 2;
+}
+#all-services .cols-4 {
+  grid-column: 7/span 2;
+}
+#all-services .cols-5 {
+  grid-column: 9/span 2;
+}
+#all-services .cols-6 {
+  grid-column: 11/span 2;
+}
+#all-services .quote-container form {
+  background: hsl(204deg, 68%, 30%);
+}
+@media (min-width: 768px) {
+  #all-services .quote-container form {
+    width: 50%;
+  }
 }
 
 #about-us {
