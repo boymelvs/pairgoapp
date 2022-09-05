@@ -3,6 +3,10 @@
    width: 100%;
    padding: 9rem 0;
 
+   @media (min-width: 768px) {
+      padding: 9rem;
+   }
+
    #service-offers,
    #rates {
       @include flexBox(column, center, center, 0rem);
@@ -33,33 +37,11 @@
             }
          }
       }
-
-      & .miscellaneous {
-         @include flexBox(column, center, center, 1rem);
-         padding: 2rem;
-         width: 100%;
-
-         & div {
-            padding: 0 2rem;
-
-            @media (min-width: 768px) {
-               padding: 0rem 4rem;
-            }
-         }
-
-         & ol {
-            padding: 2rem;
-
-            @media (min-width: 768px) {
-               padding: 2rem 4rem;
-            }
-         }
-      }
    }
 
    .services-container,
    .rates-container {
-      @include flexBox(column, center, center, 6rem);
+      @include flexBox(column, center, center, 2rem);
       width: 100%;
       padding: 4rem 2rem;
 
@@ -85,13 +67,23 @@
 
          & h2 {
             text-align: left;
-            width: 100%;
+            padding-right: 5rem;
             text-shadow: 0.1rem 0.2rem 0.3rem $black-pearl;
+            position: relative;
+            width: 25rem;
+
+            &:hover {
+               cursor: pointer;
+            }
+
+            @media (min-width: 768px) {
+               align-self: flex-start;
+            }
          }
       }
 
-      & .warehouse,
-      & .office {
+      & #warehouse,
+      & #office {
          display: grid;
          grid-template-columns: repeat(10, 1fr);
          grid-template-rows: auto;
@@ -100,36 +92,76 @@
          align-items: center;
          justify-content: center;
 
+         position: absolute;
+         opacity: 0;
+         height: 0;
+         visibility: hidden;
+
+         &.active {
+            position: unset;
+            opacity: 1;
+            height: 100%;
+            visibility: visible;
+            transition: all 500ms ease-in-out;
+         }
+
          & h3 {
             background: hsl(204, 67%, 12%);
          }
       }
 
-      & .storage-racks,
-      & .cold-storage,
-      & .vehicle-area,
-      & .basic-rate,
-      & .special-cargo,
-      & .service-charge,
-      & .deconsolidation-fee,
-      & .return-fee {
+      & #storage-racks,
+      & #cold-storage,
+      & #vehicle-area,
+      & #basic-rate,
+      & #special-cargo,
+      & #service-charge,
+      & #ancillary-charge,
+      & #deconsolidation-fee,
+      & #return-fee {
          display: grid;
          grid-template-columns: repeat(6, 1fr);
          grid-template-rows: auto;
          text-align: center;
          width: 100%;
 
+         position: absolute;
+         opacity: 0;
+         height: 0;
+         visibility: hidden;
+
+         &.active {
+            position: unset;
+            opacity: 1;
+            height: 100%;
+            visibility: visible;
+            transition: all 500ms ease-in-out;
+         }
+
          & h3 {
             background: hsl(204, 67%, 12%);
          }
       }
 
-      & .special-storage-fee {
+      & #special-storage {
          display: grid;
          grid-template-columns: repeat(4, 1fr);
          grid-template-rows: auto;
          text-align: center;
          width: 100%;
+
+         position: absolute;
+         opacity: 0;
+         height: 0;
+         visibility: hidden;
+
+         &.active {
+            position: unset;
+            opacity: 1;
+            height: 100%;
+            visibility: visible;
+            transition: all 500ms ease-in-out;
+         }
 
          & h3 {
             background: hsl(204, 67%, 12%);
@@ -186,14 +218,39 @@
       grid-column: 11 / span 2;
    }
 
-   & .quote-container {
-      & form {
-         background: $lochmara;
-         border: 0.1rem solid $azure;
+   & .arrow-down {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 2rem;
 
-         @media (min-width: 768px) {
-            width: 50%;
+      & img {
+         width: 100%;
+         animation: spinDown 500ms ease-in-out;
+         animation-fill-mode: forwards;
+
+         &.active {
+            animation: spinUp 500ms ease-in-out;
+            animation-fill-mode: forwards;
          }
+      }
+   }
+
+   @keyframes spinUp {
+      0% {
+         transform: rotate(0deg);
+      }
+      100% {
+         transform: rotate(-180deg);
+      }
+   }
+
+   @keyframes spinDown {
+      0% {
+         transform: rotate(-180deg);
+      }
+      100% {
+         transform: rotate(0deg);
       }
    }
 }

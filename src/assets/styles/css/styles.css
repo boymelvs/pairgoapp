@@ -1385,6 +1385,11 @@
   width: 100%;
   padding: 9rem 0;
 }
+@media (min-width: 768px) {
+  #all-services {
+    padding: 9rem;
+  }
+}
 #all-services #service-offers,
 #all-services #rates {
   display: flex;
@@ -1426,43 +1431,13 @@
     padding: 2rem 4rem;
   }
 }
-#all-services #service-offers .miscellaneous,
-#all-services #rates .miscellaneous {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 2rem;
-  width: 100%;
-}
-#all-services #service-offers .miscellaneous div,
-#all-services #rates .miscellaneous div {
-  padding: 0 2rem;
-}
-@media (min-width: 768px) {
-  #all-services #service-offers .miscellaneous div,
-#all-services #rates .miscellaneous div {
-    padding: 0rem 4rem;
-  }
-}
-#all-services #service-offers .miscellaneous ol,
-#all-services #rates .miscellaneous ol {
-  padding: 2rem;
-}
-@media (min-width: 768px) {
-  #all-services #service-offers .miscellaneous ol,
-#all-services #rates .miscellaneous ol {
-    padding: 2rem 4rem;
-  }
-}
 #all-services .services-container,
 #all-services .rates-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6rem;
+  gap: 2rem;
   width: 100%;
   padding: 4rem 2rem;
 }
@@ -1506,12 +1481,44 @@
 #all-services .rates-container .deconsolidation-fee-container h2,
 #all-services .rates-container .return-fee-container h2 {
   text-align: left;
-  width: 100%;
+  padding-right: 5rem;
   text-shadow: 0.1rem 0.2rem 0.3rem hsl(212deg, 29%, 13%);
+  position: relative;
+  width: 25rem;
 }
-#all-services .services-container .warehouse, #all-services .services-container .office,
-#all-services .rates-container .warehouse,
-#all-services .rates-container .office {
+#all-services .services-container .warehouse-container h2:hover, #all-services .services-container .office-container h2:hover, #all-services .services-container .storage-racks-container h2:hover, #all-services .services-container .cold-storage-container h2:hover, #all-services .services-container .special-storage-container h2:hover, #all-services .services-container .vehicle-area-container h2:hover, #all-services .services-container .basic-rate-container h2:hover, #all-services .services-container .special-cargo-container h2:hover, #all-services .services-container .service-charge-container h2:hover, #all-services .services-container .deconsolidation-fee-container h2:hover, #all-services .services-container .return-fee-container h2:hover,
+#all-services .rates-container .warehouse-container h2:hover,
+#all-services .rates-container .office-container h2:hover,
+#all-services .rates-container .storage-racks-container h2:hover,
+#all-services .rates-container .cold-storage-container h2:hover,
+#all-services .rates-container .special-storage-container h2:hover,
+#all-services .rates-container .vehicle-area-container h2:hover,
+#all-services .rates-container .basic-rate-container h2:hover,
+#all-services .rates-container .special-cargo-container h2:hover,
+#all-services .rates-container .service-charge-container h2:hover,
+#all-services .rates-container .deconsolidation-fee-container h2:hover,
+#all-services .rates-container .return-fee-container h2:hover {
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  #all-services .services-container .warehouse-container h2, #all-services .services-container .office-container h2, #all-services .services-container .storage-racks-container h2, #all-services .services-container .cold-storage-container h2, #all-services .services-container .special-storage-container h2, #all-services .services-container .vehicle-area-container h2, #all-services .services-container .basic-rate-container h2, #all-services .services-container .special-cargo-container h2, #all-services .services-container .service-charge-container h2, #all-services .services-container .deconsolidation-fee-container h2, #all-services .services-container .return-fee-container h2,
+#all-services .rates-container .warehouse-container h2,
+#all-services .rates-container .office-container h2,
+#all-services .rates-container .storage-racks-container h2,
+#all-services .rates-container .cold-storage-container h2,
+#all-services .rates-container .special-storage-container h2,
+#all-services .rates-container .vehicle-area-container h2,
+#all-services .rates-container .basic-rate-container h2,
+#all-services .rates-container .special-cargo-container h2,
+#all-services .rates-container .service-charge-container h2,
+#all-services .rates-container .deconsolidation-fee-container h2,
+#all-services .rates-container .return-fee-container h2 {
+    align-self: flex-start;
+  }
+}
+#all-services .services-container #warehouse, #all-services .services-container #office,
+#all-services .rates-container #warehouse,
+#all-services .rates-container #office {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: auto;
@@ -1519,48 +1526,95 @@
   width: 100%;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
 }
-#all-services .services-container .warehouse h3, #all-services .services-container .office h3,
-#all-services .rates-container .warehouse h3,
-#all-services .rates-container .office h3 {
+#all-services .services-container #warehouse.active, #all-services .services-container #office.active,
+#all-services .rates-container #warehouse.active,
+#all-services .rates-container #office.active {
+  position: unset;
+  opacity: 1;
+  height: 100%;
+  visibility: visible;
+  transition: all 500ms ease-in-out;
+}
+#all-services .services-container #warehouse h3, #all-services .services-container #office h3,
+#all-services .rates-container #warehouse h3,
+#all-services .rates-container #office h3 {
   background: hsl(204deg, 67%, 12%);
 }
-#all-services .services-container .storage-racks, #all-services .services-container .cold-storage, #all-services .services-container .vehicle-area, #all-services .services-container .basic-rate, #all-services .services-container .special-cargo, #all-services .services-container .service-charge, #all-services .services-container .deconsolidation-fee, #all-services .services-container .return-fee,
-#all-services .rates-container .storage-racks,
-#all-services .rates-container .cold-storage,
-#all-services .rates-container .vehicle-area,
-#all-services .rates-container .basic-rate,
-#all-services .rates-container .special-cargo,
-#all-services .rates-container .service-charge,
-#all-services .rates-container .deconsolidation-fee,
-#all-services .rates-container .return-fee {
+#all-services .services-container #storage-racks, #all-services .services-container #cold-storage, #all-services .services-container #vehicle-area, #all-services .services-container #basic-rate, #all-services .services-container #special-cargo, #all-services .services-container #service-charge, #all-services .services-container #ancillary-charge, #all-services .services-container #deconsolidation-fee, #all-services .services-container #return-fee,
+#all-services .rates-container #storage-racks,
+#all-services .rates-container #cold-storage,
+#all-services .rates-container #vehicle-area,
+#all-services .rates-container #basic-rate,
+#all-services .rates-container #special-cargo,
+#all-services .rates-container #service-charge,
+#all-services .rates-container #ancillary-charge,
+#all-services .rates-container #deconsolidation-fee,
+#all-services .rates-container #return-fee {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
   text-align: center;
   width: 100%;
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
 }
-#all-services .services-container .storage-racks h3, #all-services .services-container .cold-storage h3, #all-services .services-container .vehicle-area h3, #all-services .services-container .basic-rate h3, #all-services .services-container .special-cargo h3, #all-services .services-container .service-charge h3, #all-services .services-container .deconsolidation-fee h3, #all-services .services-container .return-fee h3,
-#all-services .rates-container .storage-racks h3,
-#all-services .rates-container .cold-storage h3,
-#all-services .rates-container .vehicle-area h3,
-#all-services .rates-container .basic-rate h3,
-#all-services .rates-container .special-cargo h3,
-#all-services .rates-container .service-charge h3,
-#all-services .rates-container .deconsolidation-fee h3,
-#all-services .rates-container .return-fee h3 {
+#all-services .services-container #storage-racks.active, #all-services .services-container #cold-storage.active, #all-services .services-container #vehicle-area.active, #all-services .services-container #basic-rate.active, #all-services .services-container #special-cargo.active, #all-services .services-container #service-charge.active, #all-services .services-container #ancillary-charge.active, #all-services .services-container #deconsolidation-fee.active, #all-services .services-container #return-fee.active,
+#all-services .rates-container #storage-racks.active,
+#all-services .rates-container #cold-storage.active,
+#all-services .rates-container #vehicle-area.active,
+#all-services .rates-container #basic-rate.active,
+#all-services .rates-container #special-cargo.active,
+#all-services .rates-container #service-charge.active,
+#all-services .rates-container #ancillary-charge.active,
+#all-services .rates-container #deconsolidation-fee.active,
+#all-services .rates-container #return-fee.active {
+  position: unset;
+  opacity: 1;
+  height: 100%;
+  visibility: visible;
+  transition: all 500ms ease-in-out;
+}
+#all-services .services-container #storage-racks h3, #all-services .services-container #cold-storage h3, #all-services .services-container #vehicle-area h3, #all-services .services-container #basic-rate h3, #all-services .services-container #special-cargo h3, #all-services .services-container #service-charge h3, #all-services .services-container #ancillary-charge h3, #all-services .services-container #deconsolidation-fee h3, #all-services .services-container #return-fee h3,
+#all-services .rates-container #storage-racks h3,
+#all-services .rates-container #cold-storage h3,
+#all-services .rates-container #vehicle-area h3,
+#all-services .rates-container #basic-rate h3,
+#all-services .rates-container #special-cargo h3,
+#all-services .rates-container #service-charge h3,
+#all-services .rates-container #ancillary-charge h3,
+#all-services .rates-container #deconsolidation-fee h3,
+#all-services .rates-container #return-fee h3 {
   background: hsl(204deg, 67%, 12%);
 }
-#all-services .services-container .special-storage-fee,
-#all-services .rates-container .special-storage-fee {
+#all-services .services-container #special-storage,
+#all-services .rates-container #special-storage {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   text-align: center;
   width: 100%;
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
 }
-#all-services .services-container .special-storage-fee h3,
-#all-services .rates-container .special-storage-fee h3 {
+#all-services .services-container #special-storage.active,
+#all-services .rates-container #special-storage.active {
+  position: unset;
+  opacity: 1;
+  height: 100%;
+  visibility: visible;
+  transition: all 500ms ease-in-out;
+}
+#all-services .services-container #special-storage h3,
+#all-services .rates-container #special-storage h3 {
   background: hsl(204deg, 67%, 12%);
 }
 #all-services .border {
@@ -1604,13 +1658,35 @@
 #all-services .cols-6 {
   grid-column: 11/span 2;
 }
-#all-services .quote-container form {
-  background: hsl(204deg, 68%, 30%);
-  border: 0.1rem solid hsl(180deg, 8%, 97%);
+#all-services .arrow-down {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
 }
-@media (min-width: 768px) {
-  #all-services .quote-container form {
-    width: 50%;
+#all-services .arrow-down img {
+  width: 100%;
+  animation: spinDown 500ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+#all-services .arrow-down img.active {
+  animation: spinUp 500ms ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes spinUp {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+@keyframes spinDown {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 
