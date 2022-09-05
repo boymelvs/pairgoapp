@@ -67,17 +67,11 @@
 
          & h2 {
             text-align: left;
-            padding-right: 5rem;
             text-shadow: 0.1rem 0.2rem 0.3rem $black-pearl;
-            position: relative;
-            width: 25rem;
+            width: 22rem;
 
             &:hover {
                cursor: pointer;
-            }
-
-            @media (min-width: 768px) {
-               align-self: flex-start;
             }
          }
       }
@@ -117,7 +111,7 @@
       & #special-cargo,
       & #service-charge,
       & #ancillary-charge,
-      & #deconsolidation-fee,
+      & #deconsolidation,
       & #return-fee {
          display: grid;
          grid-template-columns: repeat(6, 1fr);
@@ -169,7 +163,30 @@
       }
    }
 
-   .border {
+   & .title {
+      @include flexBox(row, center, none, 0);
+
+      @media (min-width: 768px) {
+         align-self: flex-start;
+      }
+   }
+
+   & .arrow-down {
+      width: 2rem;
+
+      & img {
+         width: 100%;
+         animation: spinDown 500ms ease-in-out;
+         animation-fill-mode: forwards;
+
+         &.active {
+            animation: spinUp 500ms ease-in-out;
+            animation-fill-mode: forwards;
+         }
+      }
+   }
+
+   & .border {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -185,12 +202,12 @@
       }
    }
 
-   .round-left {
+   & .round-left {
       border-radius: 1rem 0 0 0;
       background: rgb(10, 34, 50);
    }
 
-   .round-right {
+   & .round-right {
       border-radius: 0 1rem 0 0;
    }
 
@@ -216,24 +233,6 @@
 
    .cols-6 {
       grid-column: 11 / span 2;
-   }
-
-   & .arrow-down {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 2rem;
-
-      & img {
-         width: 100%;
-         animation: spinDown 500ms ease-in-out;
-         animation-fill-mode: forwards;
-
-         &.active {
-            animation: spinUp 500ms ease-in-out;
-            animation-fill-mode: forwards;
-         }
-      }
    }
 
    @keyframes spinUp {

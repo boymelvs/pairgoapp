@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import Quoteforms from "../forms/Quoteforms";
 import arrowDown from "../../assets/images/arrow-down/icon-arrow-down.svg";
 
 const Allservices = ({ scrollYValue, getId }) => {
@@ -19,9 +18,8 @@ const Allservices = ({ scrollYValue, getId }) => {
    }, []);
 
    const onTitleClick = (e) => {
-      const name = e.target.nextSibling.id;
+      const name = e.target.parentElement.nextSibling.id;
       setName(name);
-      console.log(name);
    };
 
    return (
@@ -33,12 +31,13 @@ const Allservices = ({ scrollYValue, getId }) => {
             <div className="services-container">
                {/* warehouse */}
                <div className="warehouse-container">
-                  <h2 onClick={onTitleClick}>
-                     Warehouse
+                  <div className="title">
+                     <h2 onClick={onTitleClick}>Warehouse</h2>
+
                      <span className="arrow-down">
                         <img src={arrowDown} alt="arrow down" className={`${name === "warehouse" && "active"}`} />
                      </span>
-                  </h2>
+                  </div>
 
                   <div id="warehouse" className={`${name === "warehouse" && "active"}`}>
                      <div className="cols-1">
@@ -104,12 +103,13 @@ const Allservices = ({ scrollYValue, getId }) => {
 
                {/*office */}
                <div className="office-container">
-                  <h2 onClick={onTitleClick}>
-                     Office
+                  <div className="title">
+                     <h2 onClick={onTitleClick}>Office</h2>
+
                      <span className="arrow-down">
                         <img src={arrowDown} alt="arrow down" className={`${name === "office" && "active"}`} />
                      </span>
-                  </h2>
+                  </div>
 
                   <div id="office" className={`${name === "office" && "active"}`}>
                      <div className="cols-1">
@@ -175,12 +175,13 @@ const Allservices = ({ scrollYValue, getId }) => {
 
                {/*racks */}
                <div className="storage-racks-container">
-                  <h2 onClick={onTitleClick}>
-                     Storage Racks
+                  <div className="title">
+                     <h2 onClick={onTitleClick}>Storage Racks</h2>
+
                      <span className="arrow-down">
                         <img src={arrowDown} alt="arrow down" className={`${name === "storage-racks" && "active"}`} />
                      </span>
-                  </h2>
+                  </div>
 
                   <div id="storage-racks" className={`${name === "storage-racks" && "active"}`}>
                      <div className="cols-1">
@@ -208,12 +209,13 @@ const Allservices = ({ scrollYValue, getId }) => {
 
                {/*cold storage */}
                <div className="cold-storage-container">
-                  <h2 onClick={onTitleClick}>
-                     Cold Storage
+                  <div className="title">
+                     <h2 onClick={onTitleClick}>Cold Storage</h2>
+
                      <span className="arrow-down">
                         <img src={arrowDown} alt="arrow down" className={`${name === "cold-storage" && "active"}`} />
                      </span>
-                  </h2>
+                  </div>
 
                   <div id="cold-storage" className={`${name === "cold-storage" && "active"}`}>
                      <div className="cols-1">
@@ -258,12 +260,13 @@ const Allservices = ({ scrollYValue, getId }) => {
 
                {/*special storage */}
                <div className="special-storage-container">
-                  <h2 onClick={onTitleClick}>
-                     Special Storage
+                  <div className="title">
+                     <h2 onClick={onTitleClick}>Special Storage</h2>
+
                      <span className="arrow-down">
                         <img src={arrowDown} alt="arrow down" className={`${name === "special-storage" && "active"}`} />
                      </span>
-                  </h2>
+                  </div>
 
                   <div id="special-storage" className={`${name === "special-storage" && "active"}`}>
                      <div className="cols-1">
@@ -306,12 +309,13 @@ const Allservices = ({ scrollYValue, getId }) => {
 
                {/*vehicle areas */}
                <div className="vehicle-area-container">
-                  <h2 onClick={onTitleClick}>
-                     Vehicle Areas
+                  <div className="title">
+                     <h2 onClick={onTitleClick}>Vehicle Areas</h2>
+
                      <span className="arrow-down">
                         <img src={arrowDown} alt="arrow down" className={`${name === "vehicle-area" && "active"}`} />
                      </span>
-                  </h2>
+                  </div>
 
                   <div id="vehicle-area" className={`${name === "vehicle-area" && "active"}`}>
                      <div className="cols-1">
@@ -357,12 +361,13 @@ const Allservices = ({ scrollYValue, getId }) => {
             <div className="rates-container">
                {/*basic rate */}
                <div className="basic-rate-container">
-                  <h2 onClick={onTitleClick}>
-                     Basic Storage
+                  <div className="title">
+                     <h2 onClick={onTitleClick}>Basic Storage</h2>
+
                      <span className="arrow-down">
                         <img src={arrowDown} alt="arrow down" className={`${name === "basic-rate" && "active"}`} />
                      </span>
-                  </h2>
+                  </div>
 
                   <div id="basic-rate" className={`${name === "basic-rate" && "active"}`}>
                      <div className="cols-1">
@@ -390,12 +395,13 @@ const Allservices = ({ scrollYValue, getId }) => {
 
                {/*special cargo */}
                <div className="special-cargo-container">
-                  <h2 onClick={onTitleClick}>
-                     Special Cargo
+                  <div className="title">
+                     <h2 onClick={onTitleClick}>Special Cargo</h2>
+
                      <span className="arrow-down">
                         <img src={arrowDown} alt="arrow down" className={`${name === "special-cargo" && "active"}`} />
                      </span>
-                  </h2>
+                  </div>
 
                   <div id="special-cargo" className={`${name === "special-cargo" && "active"}`}>
                      <div className="cols-1">
@@ -432,12 +438,13 @@ const Allservices = ({ scrollYValue, getId }) => {
 
                {/*service charges  */}
                <div className="service-charge-container">
-                  <h2 onClick={onTitleClick}>
-                     Service Charges
+                  <div className="title">
+                     <h2 onClick={onTitleClick}>Service Charges</h2>
+
                      <span className="arrow-down">
                         <img src={arrowDown} alt="arrow down" className={`${name === "service-charge" && "active"}`} />
                      </span>
-                  </h2>
+                  </div>
 
                   <div id="service-charge" className={`${name === "service-charge" && "active"}`}>
                      <div className="cols-1">
@@ -462,12 +469,13 @@ const Allservices = ({ scrollYValue, getId }) => {
 
                {/*ancillary charges  */}
                <div className="service-charge-container">
-                  <h2 onClick={onTitleClick}>
-                     Ancillary
+                  <div className="title">
+                     <h2 onClick={onTitleClick}>Ancillary</h2>
+
                      <span className="arrow-down">
                         <img src={arrowDown} alt="arrow down" className={`${name === "ancillary-charge" && "active"}`} />
                      </span>
-                  </h2>
+                  </div>
 
                   <div id="ancillary-charge" className={`${name === "ancillary-charge" && "active"}`}>
                      <div className="cols-1">
@@ -495,14 +503,15 @@ const Allservices = ({ scrollYValue, getId }) => {
 
                {/*deconsolidation fee  */}
                <div className="deconsolidation-fee-container">
-                  <h2 onClick={onTitleClick}>
-                     Deconsolidation
-                     <span className="arrow-down">
-                        <img src={arrowDown} alt="arrow down" className={`${name === "deconsolidation-fee" && "active"}`} />
-                     </span>
-                  </h2>
+                  <div className="title">
+                     <h2 onClick={onTitleClick}>Deconsolidation</h2>
 
-                  <div id="deconsolidation-fee" className={`${name === "deconsolidation-fee" && "active"}`}>
+                     <span className="arrow-down">
+                        <img src={arrowDown} alt="arrow down" className={`${name === "deconsolidation" && "active"}`} />
+                     </span>
+                  </div>
+
+                  <div id="deconsolidation" className={`${name === "deconsolidation" && "active"}`}>
                      <div className="cols-1">
                         <div className="border round-left"></div>
                         <div className="border">Fix Rate</div>
@@ -522,12 +531,13 @@ const Allservices = ({ scrollYValue, getId }) => {
 
                {/* return shipment fee */}
                <div className="return-fee-container">
-                  <h2 onClick={onTitleClick}>
-                     Return Shipment
+                  <div className="title">
+                     <h2 onClick={onTitleClick}>Return Shipment</h2>
+
                      <span className="arrow-down">
                         <img src={arrowDown} alt="arrow down" className={`${name === "return-fee" && "active"}`} />
                      </span>
-                  </h2>
+                  </div>
 
                   <div id="return-fee" className={`${name === "return-fee" && "active"}`}>
                      <div className="cols-1">
